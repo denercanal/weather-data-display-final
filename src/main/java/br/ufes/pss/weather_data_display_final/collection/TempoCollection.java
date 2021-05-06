@@ -1,10 +1,10 @@
 package br.ufes.pss.weather_data_display_final.collection;
 
 import br.ufes.pss.weather_data_display_final.model.Tempo;
-import br.ufes.pss.weather_data_display_final.observer.TempoObserver;
+import br.ufes.pss.weather_data_display_final.observer.TempoObservado;
 import java.util.ArrayList;
 
-public class TempoCollection extends TempoObserver {
+public class TempoCollection extends TempoObservado {
 
     private ArrayList<Tempo> tempos;
     private static TempoCollection tempoCollection;
@@ -42,6 +42,13 @@ public class TempoCollection extends TempoObserver {
     public Tempo getUltimoRegistro() {
         if (!this.tempos.isEmpty()) {
             return this.tempos.get(tempos.size() - 1);
+        }
+        return null;
+    }
+    
+    public ArrayList<Tempo> getAllTempos(){
+        if (!this.tempos.isEmpty()){
+           return this.tempos;
         }
         return null;
     }

@@ -1,10 +1,10 @@
 package br.ufes.pss.weather_data_display_final.presenter;
 
 import br.ufes.pss.weather_data_display_final.collection.TempoCollection;
-import br.ufes.pss.weather_data_display_final.observer.ITempoObserver;
 import br.ufes.pss.weather_data_display_final.view.ViewTelaPrincipal;
+import br.ufes.pss.weather_data_display_final.observer.ITempoObservador;
 
-public class PresenterTelaPrincipal implements ITempoObserver {
+public class PresenterTelaPrincipal implements ITempoObservador {
 
     private final ViewTelaPrincipal viewTelaPrincipal;
 
@@ -26,10 +26,6 @@ public class PresenterTelaPrincipal implements ITempoObserver {
         this.viewTelaPrincipal.setVisible(true);
     }
 
-    public ViewTelaPrincipal getViewTelaPrincipal() {
-        return this.viewTelaPrincipal;
-    }
-
     private void viewConfiguracaoGrafico() {
         PresenterConfiguracaoGrafico presenterConfiguracaoGrafico = new PresenterConfiguracaoGrafico(this.viewTelaPrincipal);
         presenterConfiguracaoGrafico.viewConfiguracaoGraficoVisible();
@@ -43,6 +39,7 @@ public class PresenterTelaPrincipal implements ITempoObserver {
     private void viewDadosMedios() {
         PresenterDadosMedios presenterDadosMedios = new PresenterDadosMedios(this.viewTelaPrincipal);
         presenterDadosMedios.viewDadosMediosVisible();
+        TempoCollection.getTempoCollection().add(presenterDadosMedios);
     }
 
     private void viewDadosTempo() {
@@ -53,11 +50,13 @@ public class PresenterTelaPrincipal implements ITempoObserver {
     private void viewTabelaTempo() {
         PresenterTabelaTempo presenterTabelaTempo = new PresenterTabelaTempo(this.viewTelaPrincipal);
         presenterTabelaTempo.viewTabelaTempoVisible();
+        TempoCollection.getTempoCollection().add(presenterTabelaTempo);
     }
 
     private void viewUltimaAtualizacao() {
         PresenterUltimaAtualizacao presenterUltimaAtualizacao = new PresenterUltimaAtualizacao(this.viewTelaPrincipal);
         presenterUltimaAtualizacao.viewUltimaAtualizacaoVisible();
+        TempoCollection.getTempoCollection().add(presenterUltimaAtualizacao);
     }
 
     @Override

@@ -19,6 +19,7 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
      */
     public ViewDadosMedios() {
         initComponents();
+        setLocation(235,0);
     }
 
     /**

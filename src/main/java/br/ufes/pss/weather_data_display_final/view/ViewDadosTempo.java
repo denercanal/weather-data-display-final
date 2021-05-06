@@ -20,6 +20,7 @@ public class ViewDadosTempo extends javax.swing.JInternalFrame {
      */
     public ViewDadosTempo() {
         initComponents();
+        setLocation(0, 0);
     }
 
     /**
@@ -139,7 +140,7 @@ public class ViewDadosTempo extends javax.swing.JInternalFrame {
                     .addComponent(jLabel4))
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.UNRELATED)
                 .addComponent(btnInserir)
-                .addContainerGap(28, Short.MAX_VALUE))
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
