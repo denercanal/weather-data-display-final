@@ -1,16 +1,27 @@
 package br.ufes.pss.weather_data_display_final.business;
 
 import br.ufes.pss.weather_data_display_final.command.TempoInserirCommand;
+import br.ufes.pss.weather_data_display_final.command.TempoRemoverCommand;
+import br.ufes.pss.weather_data_display_final.model.Tempo;
 import br.ufes.pss.weather_data_display_final.view.ViewDadosTempo;
-import br.ufes.pss.weather_data_display_final.view.ViewTabelaTempo;
 
 public class BusinessTempo {
 
-    
     public void inserir(ViewDadosTempo viewDadosTempo) throws Exception {
         try {
             validacaoInserir(viewDadosTempo);
             new TempoInserirCommand().executarInserir(viewDadosTempo);
+        } catch (Exception ex) {
+            throw ex;
+        }
+    }
+
+    public void remover(Tempo tempo) throws Exception {
+        try {
+
+            validacaoRemover(tempo);
+
+            new TempoRemoverCommand().executarRemover(tempo);
         } catch (Exception ex) {
             throw ex;
         }
@@ -34,7 +45,10 @@ public class BusinessTempo {
         }
     }
 
-    public void remover(ViewTabelaTempo viewTabelaTempo) {
-        throw new UnsupportedOperationException("Not supported yet."); //To change body of generated methods, choose Tools | Templates.
+    private void validacaoRemover(Tempo tempo) throws Exception {
+        if (tempo.equals(null)) {
+            throw new Exception("Elemento inválido!");
+        }
     }
+
 }
