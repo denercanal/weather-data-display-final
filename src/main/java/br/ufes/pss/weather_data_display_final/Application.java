@@ -1,6 +1,6 @@
 package br.ufes.pss.weather_data_display_final;
 
-import br.ufes.pss.weather_data_display_final.presenter.TelaPrincipalPresenter;
+import br.ufes.pss.weather_data_display_final.presenter.PresenterTelaPrincipal;
 import br.ufes.pss.weather_data_display_final.view.ViewTelaPrincipal;
 
 public class Application {
@@ -20,8 +20,7 @@ public class Application {
             java.util.logging.Logger.getLogger(ViewTelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        TelaPrincipalPresenter telaPrincipal = new TelaPrincipalPresenter();
-        telaPrincipal.viewTelaPrincipal();
+        PresenterTelaPrincipal telaPrincipal = new PresenterTelaPrincipal();
 
     }
 }
