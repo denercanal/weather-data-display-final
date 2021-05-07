@@ -1,12 +1,14 @@
 package br.ufes.pss.weather_data_display_final.presenter;
 
 import br.ufes.pss.weather_data_display_final.business.BusinessTempo;
+import br.ufes.pss.weather_data_display_final.collection.TempoCollection;
+import br.ufes.pss.weather_data_display_final.observer.ITempoObservador;
 import br.ufes.pss.weather_data_display_final.view.ViewDadosTempo;
 import br.ufes.pss.weather_data_display_final.view.ViewTelaPrincipal;
 import java.awt.event.ActionEvent;
 import javax.swing.JOptionPane;
 
-public class PresenterDadosTempo {
+public class PresenterDadosTempo implements ITempoObservador {
 
     private ViewTelaPrincipal viewTelaPrincipal;
     private ViewDadosTempo viewDadosTempo;
@@ -15,7 +17,7 @@ public class PresenterDadosTempo {
     public PresenterDadosTempo(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
         this.viewDadosTempo = new ViewDadosTempo();
-        
+
         this.viewTelaPrincipal.getDesktop().add(this.viewDadosTempo);
 
         this.businessTempo = new BusinessTempo();
@@ -31,7 +33,6 @@ public class PresenterDadosTempo {
         this.viewDadosTempo.getBtnInserir().addActionListener((ActionEvent e) -> {
             try {
                 this.businessTempo.inserir(viewDadosTempo);
-                this.limparCamposInsert();
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.OK_OPTION);
             }
@@ -39,7 +40,8 @@ public class PresenterDadosTempo {
         );
     }
 
-    private void limparCamposInsert() {
+    @Override
+    public void update(TempoCollection tempoCollection) {
         this.viewDadosTempo.getDataTempo().setText("");
         this.viewDadosTempo.getTemperaturaTempo().setText("");
         this.viewDadosTempo.getUmidadeTempo().setText("");

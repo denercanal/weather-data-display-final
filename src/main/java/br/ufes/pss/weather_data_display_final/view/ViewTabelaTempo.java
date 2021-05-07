@@ -43,14 +43,14 @@ public class ViewTabelaTempo extends javax.swing.JInternalFrame {
 
             },
             new String [] {
-                "Data", "Temperatura", "Umidade", "Pressão"
+                "ID", "Data", "Temperatura", "Umidade", "Pressão"
             }
         ) {
             Class[] types = new Class [] {
-                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
+                java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class, java.lang.String.class
             };
             boolean[] canEdit = new boolean [] {
-                false, false, false, false
+                false, false, false, false, false
             };
 
             public Class getColumnClass(int columnIndex) {

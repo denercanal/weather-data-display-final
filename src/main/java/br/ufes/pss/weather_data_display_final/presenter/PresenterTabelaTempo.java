@@ -35,9 +35,16 @@ public class PresenterTabelaTempo implements ITempoObservador {
     private void viewTabelaTempoRemover() {
         this.viewTabelaTempo.getBtnRemover().addActionListener((ActionEvent e) -> {
             try {
-                this.businessTempo.remover(viewTabelaTempo);
+                if (this.viewTabelaTempo.getTabela().getSelectedRowCount() == 0 || this.viewTabelaTempo.getTabela().getRowCount() <= 0) {
+                    throw new Exception("Selecionar uma linha se for remover um registro!");
+                } else {
+                    var linhaSelecionada = viewTabelaTempo.getTabela().getSelectedRow();
+                    var idDadoTempo = viewTabelaTempo.getTabela().getValueAt(linhaSelecionada, 0);
+                    var tempo = TempoCollection.getTempoCollection().getTempoById((int) idDadoTempo);
+                    this.businessTempo.remover(tempo);
+                }
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.OK_OPTION);
+                JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Alerta!", JOptionPane.INFORMATION_MESSAGE);
             }
         }
         );
@@ -46,20 +53,17 @@ public class PresenterTabelaTempo implements ITempoObservador {
     @Override
     public void update(TempoCollection tempoCollection) {
 
-        try {
-            var tempos = TempoCollection.getTempoCollection().getAllTempos();
+        var tempos = TempoCollection.getTempoCollection().getAllTempos();
+        ((DefaultTableModel) this.viewTabelaTempo.getTabela().getModel()).setNumRows(0);
+        viewTabelaTempo.getTabela().updateUI();
 
-            ((DefaultTableModel) this.viewTabelaTempo.getTabela().getModel()).setNumRows(0);
-            viewTabelaTempo.getTabela().updateUI();
+        DefaultTableModel model = (DefaultTableModel) viewTabelaTempo.getTabela().getModel();
 
-            DefaultTableModel model = (DefaultTableModel) viewTabelaTempo.getTabela().getModel();
-
-            if (!tempos.isEmpty()) {
-                for (Tempo tempo : tempos) {
-                    model.addRow(new Object[]{tempo.getDataTempo().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), tempo.getTemperaturaTempo(), tempo.getUmidadeTempo(), tempo.getPressaoTempo()});
-                }
+        if (!tempos.isEmpty()) {
+            for (Tempo tempo : tempos) {
+                var linha = new Object[]{tempo.getId(), tempo.getDataTempo().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), tempo.getTemperaturaTempo().toString().replace(".", ","), tempo.getUmidadeTempo().toString().replace(".", ","), tempo.getPressaoTempo().toString().replace(".", ",")};
+                model.addRow(linha);
             }
-        } catch (Exception e) {
         }
     }
 }

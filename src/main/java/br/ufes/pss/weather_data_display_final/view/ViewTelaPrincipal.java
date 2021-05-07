@@ -89,6 +89,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
     public JDesktopPane getDesktop() {
         return desktop;
     }
+    
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
     private javax.swing.JDesktopPane desktop;
