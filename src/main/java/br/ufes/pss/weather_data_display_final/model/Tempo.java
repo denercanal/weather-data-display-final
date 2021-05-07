@@ -3,7 +3,7 @@ package br.ufes.pss.weather_data_display_final.model;
 import java.time.LocalDate;
 
 public class Tempo {
-
+    
     private int id;
     private LocalDate dataTempo;
     private Double temperaturaTempo;
@@ -60,5 +60,7 @@ public class Tempo {
     public void setPressaoTempo(Double pressaoTempo) {
         this.pressaoTempo = pressaoTempo;
     }
+
+    
 
 }
