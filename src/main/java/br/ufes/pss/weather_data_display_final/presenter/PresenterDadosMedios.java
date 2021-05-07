@@ -22,7 +22,7 @@ public class PresenterDadosMedios implements ITempoObservador {
     public PresenterDadosMedios(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
         this.viewDadosMedios = new ViewDadosMedios();
-        
+        this.calculador = new CalculadorMediaDia();
         this.viewTelaPrincipal.getDesktop().add(this.viewDadosMedios);
         atualizaDados();
         
@@ -30,6 +30,7 @@ public class PresenterDadosMedios implements ITempoObservador {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 atualizaDados();
+
             }
             
         });
