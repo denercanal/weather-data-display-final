@@ -10,9 +10,7 @@ public class CalculadorMediaDia extends CalculadorMediaTempo{
 
     @Override
     protected ArrayList<Tempo> filtrarPorPeriodo(TempoCollection registros) {
-        return (ArrayList<Tempo>) registros.getAllTempos().stream().filter((tempo) -> {
-            return tempo.getDataTempo().isEqual(LocalDate.now());
-        }).collect(Collectors.toList());
+        return (ArrayList<Tempo>) registros.getAllTempos().stream().filter((tempo) -> tempo.getDataTempo().isEqual(LocalDate.now())).collect(Collectors.toList());
     }
 
 }
