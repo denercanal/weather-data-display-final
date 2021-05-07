@@ -42,6 +42,8 @@ public class ViewUltimaAtualizacao extends javax.swing.JInternalFrame {
         ultimaUmidadeTempo = new javax.swing.JLabel();
         ultimaPressaoTempo = new javax.swing.JLabel();
 
+        setTitle("Última Atualização do Tempo");
+
         jPanel4.setBackground(new java.awt.Color(119, 119, 119));
         jPanel4.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

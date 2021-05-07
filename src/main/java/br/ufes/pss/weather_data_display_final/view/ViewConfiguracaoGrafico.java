@@ -43,7 +43,7 @@ public class ViewConfiguracaoGrafico extends javax.swing.JInternalFrame {
 
         jLabel20.setText("Tipo:");
 
-        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BARRA HORIZONTAL", "BARRA VERTICAL", " " }));
+        jComboBox3.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "BARRA HORIZONTAL", "BARRA VERTICAL" }));
 
         btnGerarGrafico.setBackground(new java.awt.Color(51, 51, 51));
         btnGerarGrafico.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N

@@ -39,17 +39,14 @@ public class TempoCollection extends TempoObservado {
 
     public void remover(Tempo tempo) {
 
-        if (tempos.isEmpty()) {
-            
-        } else {
-            this.tempos.remove(tempo);
-            notifica();
-        }
+        this.tempos.remove(tempo);
+        notifica();
+
     }
 
     public int getTotalRegistros() {
 
-        if (this.tempos != null) {
+        if (this.tempos.size() > 0) {
             return this.tempos.size();
         }
         return 0;
@@ -57,18 +54,12 @@ public class TempoCollection extends TempoObservado {
 
     public Tempo getUltimoRegistro() {
 
-        if (!this.tempos.isEmpty()) {
-            return this.tempos.get(tempos.size() - 1);
-        }
-        return null;
+        return this.tempos.get(tempos.size() - 1);
+
     }
 
     public ArrayList<Tempo> getAllTempos() {
-
-        if (!this.tempos.isEmpty()) {
-            return this.tempos;
-        }
-        return null;
+        return this.tempos;
     }
 
     public Tempo getTempoById(int id) {

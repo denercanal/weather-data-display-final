@@ -22,6 +22,7 @@ public class BusinessTempo {
             validacaoRemover(tempo);
 
             new TempoRemoverCommand().executarRemover(tempo);
+
         } catch (Exception ex) {
             throw ex;
         }
@@ -46,7 +47,7 @@ public class BusinessTempo {
     }
 
     private void validacaoRemover(Tempo tempo) throws Exception {
-        if (tempo.equals(null)) {
+        if (tempo == null) {
             throw new Exception("Elemento inválido!");
         }
     }

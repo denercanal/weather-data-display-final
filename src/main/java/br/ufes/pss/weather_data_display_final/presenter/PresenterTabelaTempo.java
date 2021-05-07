@@ -54,7 +54,6 @@ public class PresenterTabelaTempo implements ITempoObservador {
     public void update(TempoCollection tempoCollection) {
 
         var tempos = TempoCollection.getTempoCollection().getAllTempos();
-
         ((DefaultTableModel) this.viewTabelaTempo.getTabela().getModel()).setNumRows(0);
         viewTabelaTempo.getTabela().updateUI();
 
