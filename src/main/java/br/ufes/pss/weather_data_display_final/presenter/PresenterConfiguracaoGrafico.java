@@ -50,21 +50,25 @@ public class PresenterConfiguracaoGrafico {
     }
 
     private Grafico graficoHorizontal() {
-        DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-        dataset.addValue(250, "Temperatura Média", "");
-        dataset.addValue(120, "Umidade Média", "");
-        dataset.addValue(1000, "Pressão Média", "");
+
+        var dataset = this.getDadosGrafico();
 
         return grafico = new GraficoBarraHorizontal(dataset);
     }
 
     private Grafico graficoVertical() {
+        var dataset = this.getDadosGrafico();
+        return grafico = new GraficoBarraVertical(dataset);
+    }
+
+    private DefaultCategoryDataset getDadosGrafico() {
+
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
+
         dataset.addValue(250, "Temperatura Média", "");
         dataset.addValue(120, "Umidade Média", "");
         dataset.addValue(1000, "Pressão Média", "");
 
-        return grafico = new GraficoBarraVertical(dataset);
+        return dataset;
     }
-
 }

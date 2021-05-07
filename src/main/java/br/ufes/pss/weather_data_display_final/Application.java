@@ -23,7 +23,7 @@ public class Application {
             java.util.logging.Logger.getLogger(ViewTelaPrincipal.class.getName()).log(java.util.logging.Level.SEVERE, null, ex);
         }
 
-        PresenterTelaPrincipal telaPrincipal = new PresenterTelaPrincipal();
+        new PresenterTelaPrincipal();
 
         Tempo tempo1 = new Tempo(0, LocalDate.now().plusMonths(1), 10D, 10D, 10D);
 //        Tempo tempo2 = new Tempo(1, LocalDate.now().plusMonths(1), 10D, 10D, 10D);
