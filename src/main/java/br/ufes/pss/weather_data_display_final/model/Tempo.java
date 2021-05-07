@@ -4,6 +4,7 @@ import java.time.LocalDate;
 
 public class Tempo {
 
+    private int id;
     private LocalDate dataTempo;
     private Double temperaturaTempo;
     private Double umidadeTempo;
@@ -12,11 +13,20 @@ public class Tempo {
     public Tempo() {
     }
 
-    public Tempo(LocalDate dataTempo, Double temperaturaTempo, Double umidadeTempo, Double pressaoTempo) {
+    public Tempo(int id, LocalDate dataTempo, Double temperaturaTempo, Double umidadeTempo, Double pressaoTempo) {
+        this.id = id;
         this.dataTempo = dataTempo;
         this.temperaturaTempo = temperaturaTempo;
         this.umidadeTempo = umidadeTempo;
         this.pressaoTempo = pressaoTempo;
+    }
+
+    public int getId() {
+        return id;
+    }
+
+    public void setId(int id) {
+        this.id = id;
     }
 
     public LocalDate getDataTempo() {
