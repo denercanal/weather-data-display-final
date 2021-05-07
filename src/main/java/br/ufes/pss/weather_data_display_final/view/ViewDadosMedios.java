@@ -32,12 +32,12 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
     private void initComponents() {
 
         jPanel5 = new javax.swing.JPanel();
-        jLabel9 = new javax.swing.JLabel();
-        jLabel10 = new javax.swing.JLabel();
-        jLabel11 = new javax.swing.JLabel();
-        jLabel12 = new javax.swing.JLabel();
-        jLabel13 = new javax.swing.JLabel();
-        jComboBox1 = new javax.swing.JComboBox<>();
+        lblPeriodo = new javax.swing.JLabel();
+        lblTemperatura = new javax.swing.JLabel();
+        lblUmidade = new javax.swing.JLabel();
+        lblPressao = new javax.swing.JLabel();
+        lblNRegistros = new javax.swing.JLabel();
+        cbbPeriodo = new javax.swing.JComboBox<>();
         jSeparator1 = new javax.swing.JSeparator();
         jLabel15 = new javax.swing.JLabel();
         temperaturaMedia = new javax.swing.JLabel();
@@ -48,20 +48,20 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
         jPanel5.setBackground(new java.awt.Color(119, 119, 119));
         jPanel5.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 
-        jLabel9.setText("Período:");
+        lblPeriodo.setText("Período:");
 
-        jLabel10.setText("Temperatura:");
+        lblTemperatura.setText("Temperatura:");
 
-        jLabel11.setText("Umidade:");
+        lblUmidade.setText("Umidade:");
 
-        jLabel12.setText("Pressão:");
+        lblPressao.setText("Pressão:");
 
-        jLabel13.setText("Nº de Registros:");
+        lblNRegistros.setText("Nº de Registros:");
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diária", "Semanal", "Mensal" }));
-        jComboBox1.addActionListener(new java.awt.event.ActionListener() {
+        cbbPeriodo.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "Diária", "Semanal", "Mensal" }));
+        cbbPeriodo.addActionListener(new java.awt.event.ActionListener() {
             public void actionPerformed(java.awt.event.ActionEvent evt) {
-                jComboBox1ActionPerformed(evt);
+                cbbPeriodoActionPerformed(evt);
             }
         });
 
@@ -83,18 +83,18 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
                     .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
                             .addGroup(jPanel5Layout.createSequentialGroup()
-                                .addComponent(jLabel13)
+                                .addComponent(lblNRegistros)
                                 .addGap(0, 0, Short.MAX_VALUE))
                             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, jPanel5Layout.createSequentialGroup()
                                 .addGap(0, 0, Short.MAX_VALUE)
                                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.TRAILING)
-                                    .addComponent(jLabel10)
-                                    .addComponent(jLabel9)
-                                    .addComponent(jLabel11)
-                                    .addComponent(jLabel12))
+                                    .addComponent(lblTemperatura)
+                                    .addComponent(lblPeriodo)
+                                    .addComponent(lblUmidade)
+                                    .addComponent(lblPressao))
                                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)))
                         .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                            .addComponent(jComboBox1, 0, 143, Short.MAX_VALUE)
+                            .addComponent(cbbPeriodo, 0, 143, Short.MAX_VALUE)
                             .addComponent(temperaturaMedia, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(umidadeMedia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
                             .addComponent(pressaoMedia, javax.swing.GroupLayout.Alignment.TRAILING, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -110,22 +110,22 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
                 .addComponent(jSeparator1, javax.swing.GroupLayout.PREFERRED_SIZE, 4, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                    .addComponent(jLabel9))
+                    .addComponent(cbbPeriodo, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(lblPeriodo))
                 .addGap(0, 0, 0)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jLabel10)
+                    .addComponent(lblTemperatura)
                     .addComponent(temperaturaMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jLabel11)
+                    .addComponent(lblUmidade)
                     .addComponent(umidadeMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE))
                 .addGap(12, 12, 12)
                 .addGroup(jPanel5Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addGroup(jPanel5Layout.createSequentialGroup()
-                        .addComponent(jLabel12)
+                        .addComponent(lblPressao)
                         .addGap(12, 12, 12)
-                        .addComponent(jLabel13))
+                        .addComponent(lblNRegistros))
                     .addGroup(jPanel5Layout.createSequentialGroup()
                         .addComponent(pressaoMedia, javax.swing.GroupLayout.PREFERRED_SIZE, 19, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,12 +147,12 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void jComboBox1ActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_jComboBox1ActionPerformed
+    private void cbbPeriodoActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cbbPeriodoActionPerformed
         // TODO add your handling code here:
-    }//GEN-LAST:event_jComboBox1ActionPerformed
+    }//GEN-LAST:event_cbbPeriodoActionPerformed
 
-    public JComboBox<String> getjComboBox1() {
-        return jComboBox1;
+    public JComboBox<String> getCbbPeriodo() {
+        return cbbPeriodo;
     }
 
     public JLabel getPressaoMedia() {
@@ -172,15 +172,15 @@ public class ViewDadosMedios extends javax.swing.JInternalFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JComboBox<String> jComboBox1;
-    private javax.swing.JLabel jLabel10;
-    private javax.swing.JLabel jLabel11;
-    private javax.swing.JLabel jLabel12;
-    private javax.swing.JLabel jLabel13;
+    private javax.swing.JComboBox<String> cbbPeriodo;
     private javax.swing.JLabel jLabel15;
-    private javax.swing.JLabel jLabel9;
     private javax.swing.JPanel jPanel5;
     private javax.swing.JSeparator jSeparator1;
+    private javax.swing.JLabel lblNRegistros;
+    private javax.swing.JLabel lblPeriodo;
+    private javax.swing.JLabel lblPressao;
+    private javax.swing.JLabel lblTemperatura;
+    private javax.swing.JLabel lblUmidade;
     private javax.swing.JLabel pressaoMedia;
     private javax.swing.JLabel temperaturaMedia;
     private javax.swing.JLabel totalRegistrosMedia;
