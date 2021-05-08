@@ -58,6 +58,7 @@ public class PresenterConfiguracaoGrafico {
 
     private Grafico graficoVertical() {
         var dataset = this.getDadosGrafico();
+        
         return grafico = new GraficoBarraVertical(dataset);
     }
 

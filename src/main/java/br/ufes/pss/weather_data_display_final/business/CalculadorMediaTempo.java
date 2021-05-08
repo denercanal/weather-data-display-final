@@ -10,8 +10,8 @@ public abstract class CalculadorMediaTempo implements ICalculadorMediaTempo {
     protected abstract ArrayList<Tempo> filtrarPorPeriodo(TempoCollection registros);
     
     @Override
-    public TempoMedia calcular(TempoCollection registros) {
-        ArrayList<Tempo> registrosDoDia = filtrarPorPeriodo(registros);
+    public TempoMedia calcular(TempoCollection tempoCollection) {
+        ArrayList<Tempo> registrosDoDia = filtrarPorPeriodo(tempoCollection);
         
         int qtdRegistros = registrosDoDia.size();
         

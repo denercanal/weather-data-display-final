@@ -18,72 +18,69 @@ public class PresenterDadosMedios implements ITempoObservador {
     private ViewDadosMedios viewDadosMedios;
     private CalculadorMediaTempo calculador;
     private TempoCollection tempoCollection;
-    
+
     public PresenterDadosMedios(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
         this.viewDadosMedios = new ViewDadosMedios();
         this.calculador = new CalculadorMediaDia();
         this.viewTelaPrincipal.getDesktop().add(this.viewDadosMedios);
-        atualizaDados();
+        this.viewDadosMediosCalcular();
         
-        this.viewDadosMedios.getCbbPeriodo().addActionListener( new ActionListener(){ 
+    }
+    
+    private void viewDadosMediosCalcular(){
+        this.viewDadosMedios.getCbbPeriodo().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
-                atualizaDados();
+                String opcao = viewDadosMedios.getCbbPeriodo().getSelectedItem().toString();
 
+                if (opcao.equalsIgnoreCase("diária")) {
+                    calculador = new CalculadorMediaDia();
+                    calcularMedia();
+                }
+                if (opcao.equalsIgnoreCase("semanal")) {
+                    calculador = new CalculadorMediaSemana();
+                    calcularMedia();
+                }
+                if (opcao.equalsIgnoreCase("mensal")) {
+                    calculador = new CalculadorMediaMes();
+                    calcularMedia();
+                }
             }
-            
         });
     }
 
     public void viewDadosMediosVisible() {
         this.viewDadosMedios.setVisible(true);
     }
-    
-    private void atualizaDados() {
-        
-        String opcao = this.viewDadosMedios.getCbbPeriodo().getSelectedItem().toString();
-        
-        if (opcao.equalsIgnoreCase("diario")){
-            calculador = new CalculadorMediaDia();
-        }
-        if (opcao.equalsIgnoreCase("semanal")){
-            calculador = new CalculadorMediaSemana();
-        }
-        if (opcao.equalsIgnoreCase("mensal")){
-            calculador = new CalculadorMediaMes();
-        }
-        
-    }
-    
-    public void atualizarCampos(TempoMedia tempoMedia){
-        
+
+    public void atualizarCampos(TempoMedia tempoMedia) {
+
         viewDadosMedios.getTemperaturaMedia().setText(String.format("%.2f", tempoMedia.getTemperaturaTempo()));
-        viewDadosMedios.getUmidadeMedia().setText(String.format("%.2f",tempoMedia.getUmidadeTempo()));
-        viewDadosMedios.getPressaoMedia().setText(String.format("%.2f",tempoMedia.getPressaoTempo()));
+        viewDadosMedios.getUmidadeMedia().setText(String.format("%.2f", tempoMedia.getUmidadeTempo()));
+        viewDadosMedios.getPressaoMedia().setText(String.format("%.2f", tempoMedia.getPressaoTempo()));
         viewDadosMedios.getTotalRegistrosMedia().setText(String.valueOf(tempoMedia.getQuantidadeTempo()));
     }
-    
-    public void limparCampos(){
-        
+
+    public void limparCampos() {
+
         viewDadosMedios.getTemperaturaMedia().setText("");
         viewDadosMedios.getUmidadeMedia().setText("");
         viewDadosMedios.getPressaoMedia().setText("");
         viewDadosMedios.getTotalRegistrosMedia().setText("0");
     }
-    
-    private void calcularMedia(){
-        try{
-            TempoMedia tempo = calculador.calcular(this.tempoCollection);
+
+    private void calcularMedia() {
+        try {
+            TempoMedia tempo = calculador.calcular(TempoCollection.getTempoCollection());
             atualizarCampos(tempo);
-        }catch(RuntimeException re){
+        } catch (RuntimeException re) {
             limparCampos();
         }
     }
 
     @Override
     public void update(TempoCollection registrosTempo) {
-        this.tempoCollection = registrosTempo;
-        calcularMedia();        
+        calcularMedia();
     }
 }
