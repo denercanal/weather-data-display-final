@@ -5,6 +5,7 @@ import br.ufes.pss.weather_data_display_final.decorator.GraficoBarraHorizontal;
 import br.ufes.pss.weather_data_display_final.decorator.GraficoBarraVertical;
 import br.ufes.pss.weather_data_display_final.presenter.grafico.GraficoPresenter;
 import br.ufes.pss.weather_data_display_final.view.ViewConfiguracaoGrafico;
+import br.ufes.pss.weather_data_display_final.view.ViewDadosMedios;
 import br.ufes.pss.weather_data_display_final.view.ViewTelaPrincipal;
 import java.awt.Frame;
 import java.awt.event.ActionEvent;
@@ -34,14 +35,9 @@ public class PresenterConfiguracaoGrafico {
     private void viewConfiguracaoGraficoGerar() {
         this.viewConfiguracaoGrafico.getBtnGerarGrafico().addActionListener((ActionEvent e) -> {
             try {
-                if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA HORIZONTAL")) {
-                    this.graficoHorizontal();
-                } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA VERTICAL")) {
-                    this.graficoVertical();
-                }
+                this.tipoGrafico();
                 GraficoPresenter graficoPresenter = new GraficoPresenter(new Frame(), true, this.grafico);
                 graficoPresenter.viewGraficoModalVisible();
-
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.OK_OPTION);
             }
@@ -49,33 +45,49 @@ public class PresenterConfiguracaoGrafico {
         );
     }
 
-    private Grafico graficoHorizontal() {
+    private void tipoGrafico() throws Exception {
+        if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA HORIZONTAL")) {
+            this.graficoHorizontal();
+        } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA VERTICAL")) {
+            this.graficoVertical();
+        }
+    }
 
+    private Grafico graficoHorizontal() throws Exception {
         var dataset = this.getDadosGrafico();
-
         return grafico = new GraficoBarraHorizontal(dataset);
     }
 
-    private Grafico graficoVertical() {
+    private Grafico graficoVertical() throws Exception {
         var dataset = this.getDadosGrafico();
-
         return grafico = new GraficoBarraVertical(dataset);
     }
 
-    private DefaultCategoryDataset getDadosGrafico() {
-
+    private DefaultCategoryDataset getDadosGrafico() throws Exception {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
         
-        var viewDadosTempo = PresenterDadosMedios.getViewDadosMedios();
-        
-        var temperaturaMedia = Double.parseDouble(viewDadosTempo.getTemperaturaMedia().getText().replace(",", "."));
-        var umidadeMedia = Double.parseDouble(viewDadosTempo.getUmidadeMedia().getText().replace(",", "."));
-        var pressoMedia = Double.parseDouble(viewDadosTempo.getPressaoMedia().getText().replace(",", "."));
-        
+        var viewDadosMedios = PresenterDadosMedios.getViewDadosMedios();
+        validaViewDadosMedios(viewDadosMedios);
+
+        var temperaturaMedia = Double.parseDouble(viewDadosMedios.getTemperaturaMedia().getText().replace(",", "."));
+        var umidadeMedia = Double.parseDouble(viewDadosMedios.getUmidadeMedia().getText().replace(",", "."));
+        var pressoMedia = Double.parseDouble(viewDadosMedios.getPressaoMedia().getText().replace(",", "."));
+
         dataset.addValue(temperaturaMedia, "Temperatura Média", "");
         dataset.addValue(umidadeMedia, "Umidade Média", "");
         dataset.addValue(pressoMedia, "Pressão Média", "");
 
         return dataset;
+    }
+
+    private void validaViewDadosMedios(ViewDadosMedios viewDadosMedios) throws Exception {
+
+        try {
+            if (viewDadosMedios.getTemperaturaMedia().getText().isBlank() || viewDadosMedios.getUmidadeMedia().getText().isBlank() || viewDadosMedios.getPressaoMedia().getText().isBlank()) {
+                throw new Exception("Impossível gerar gráfico, sem dados inseridos para o período!");
+            }
+        } catch (Exception e) {
+            throw e;
+        }
     }
 }
