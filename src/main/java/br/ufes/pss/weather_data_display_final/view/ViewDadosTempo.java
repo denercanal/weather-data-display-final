@@ -45,8 +45,6 @@ public class ViewDadosTempo extends javax.swing.JInternalFrame {
         jSeparator2 = new javax.swing.JSeparator();
         jLabel16 = new javax.swing.JLabel();
 
-        setTitle("Dados do Tempo");
-
         jPanel3.setBackground(new java.awt.Color(119, 119, 119));
         jPanel3.setBorder(javax.swing.BorderFactory.createLineBorder(new java.awt.Color(0, 0, 0)));
 

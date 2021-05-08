@@ -56,7 +56,7 @@ public class PresenterConfiguracaoGrafico {
                 }
 
             } catch (Exception ex) {
-                JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.OK_OPTION);
+                JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.INFORMATION_MESSAGE);
             }
         }
         );
