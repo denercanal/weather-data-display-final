@@ -58,17 +58,23 @@ public class PresenterConfiguracaoGrafico {
 
     private Grafico graficoVertical() {
         var dataset = this.getDadosGrafico();
-        
+
         return grafico = new GraficoBarraVertical(dataset);
     }
 
     private DefaultCategoryDataset getDadosGrafico() {
 
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
-
-        dataset.addValue(250, "Temperatura Média", "");
-        dataset.addValue(120, "Umidade Média", "");
-        dataset.addValue(1000, "Pressão Média", "");
+        
+        var viewDadosTempo = PresenterDadosMedios.getViewDadosMedios();
+        
+        var temperaturaMedia = Double.parseDouble(viewDadosTempo.getTemperaturaMedia().getText().replace(",", "."));
+        var umidadeMedia = Double.parseDouble(viewDadosTempo.getUmidadeMedia().getText().replace(",", "."));
+        var pressoMedia = Double.parseDouble(viewDadosTempo.getPressaoMedia().getText().replace(",", "."));
+        
+        dataset.addValue(temperaturaMedia, "Temperatura Média", "");
+        dataset.addValue(umidadeMedia, "Umidade Média", "");
+        dataset.addValue(pressoMedia, "Pressão Média", "");
 
         return dataset;
     }

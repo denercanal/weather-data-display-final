@@ -15,9 +15,8 @@ import java.awt.event.ActionListener;
 public class PresenterDadosMedios implements ITempoObservador {
 
     private ViewTelaPrincipal viewTelaPrincipal;
-    private ViewDadosMedios viewDadosMedios;
+    private static ViewDadosMedios viewDadosMedios;
     private CalculadorMediaTempo calculador;
-    private TempoCollection tempoCollection;
 
     public PresenterDadosMedios(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
@@ -25,10 +24,24 @@ public class PresenterDadosMedios implements ITempoObservador {
         this.calculador = new CalculadorMediaDia();
         this.viewTelaPrincipal.getDesktop().add(this.viewDadosMedios);
         this.viewDadosMediosCalcular();
-        
+
     }
-    
-    private void viewDadosMediosCalcular(){
+
+    public static ViewDadosMedios getViewDadosMedios() {
+
+        if (viewDadosMedios == null) {
+            return viewDadosMedios = new ViewDadosMedios();
+        } else {
+            return viewDadosMedios;
+        }
+    }
+
+    private PresenterDadosMedios() {
+
+        this.viewDadosMedios = new ViewDadosMedios();
+    }
+
+    private void viewDadosMediosCalcular() {
         this.viewDadosMedios.getCbbPeriodo().addActionListener(new ActionListener() {
             @Override
             public void actionPerformed(ActionEvent arg0) {
