@@ -14,16 +14,14 @@ public class GraficoPresenter {
     public GraficoPresenter(Frame parent, boolean modal, Grafico grafico) {
         this.viewGraficoModal = new ViewGraficoModal(parent, true);
         this.grafico = grafico;
-
         this.plotarGrafico();
-
     }
 
     public void viewGraficoModalVisible() {
         this.viewGraficoModal.setVisible(true);
     }
 
-    public ViewGraficoModal getView() {
+    public ViewGraficoModal getViewGraficoModal() {
         return viewGraficoModal;
     }
 

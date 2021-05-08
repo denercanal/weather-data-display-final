@@ -35,7 +35,7 @@ public abstract class CalculadorMediaTempo implements ICalculadorMediaTempo {
         tempo.setUmidadeTempo(humidade/quantidadeRegistros);
         tempo.setPressaoTempo(pressao/quantidadeRegistros);
         tempo.setQuantidadeTempo(quantidadeRegistros);
-        
+
         tempo.setTipoLog("calcular");
         Logger.salvarLog(tempo);
         return tempo;
