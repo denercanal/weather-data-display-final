@@ -16,6 +16,14 @@ public class TempoGerarGraficoCommand extends TempoCommand {
     @Override
     public void executarGerarGrafico(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
 
+        var dataset = this.getDataset(viewDadosMedios);
+        var graficoMontado = this.graficoOptions(grafico, graficoOptions, dataset);
+
+        GraficoPresenter graficoPresenter = new GraficoPresenter(new Frame(), true, graficoMontado);
+        graficoPresenter.viewGraficoModalVisible();
+    }
+
+    private DefaultCategoryDataset getDataset(ViewDadosMedios viewDadosMedios) {
         DefaultCategoryDataset dataset = new DefaultCategoryDataset();
 
         var temperaturaMedia = Double.parseDouble(viewDadosMedios.getTemperaturaMedia().getText().replace(",", "."));
@@ -26,21 +34,31 @@ public class TempoGerarGraficoCommand extends TempoCommand {
         dataset.addValue(umidadeMedia, "Umidade Média", "");
         dataset.addValue(pressoMedia, "Pressão Média", "");
 
-        if (graficoOptions.getTipo().equalsIgnoreCase("horizontal")) {
-            grafico = new GraficoBarraHorizontal(dataset);
-        } else if (graficoOptions.getTipo().equalsIgnoreCase("vertical")) {
-            grafico = new GraficoBarraVertical(dataset);
-        }
+        return dataset;
+    }
+
+    private Grafico graficoOptions(Grafico grafico, GraficoOptions graficoOptions, DefaultCategoryDataset dataset) {
 
         if (graficoOptions.getSelected()) {
-            grafico = new TituloEixoX(grafico, graficoOptions.getTituloEixoX());
-            grafico = new TituloEixoY(grafico, graficoOptions.getTituloEixoY());
+            if (graficoOptions.getTipo().equalsIgnoreCase("horizontal")) {
+                grafico = new GraficoBarraHorizontal(dataset);
+                grafico = new TituloEixoX(grafico, graficoOptions.getTituloEixoY());
+                grafico = new TituloEixoY(grafico, graficoOptions.getTituloEixoX());
+            } else if (graficoOptions.getTipo().equalsIgnoreCase("vertical")) {
+                grafico = new GraficoBarraVertical(dataset);
+                grafico = new TituloEixoX(grafico, graficoOptions.getTituloEixoX());
+                grafico = new TituloEixoY(grafico, graficoOptions.getTituloEixoY());
+            }
         } else {
-            grafico = new TituloEixoX(grafico, "");
-            grafico = new TituloEixoY(grafico, "");
+            if (graficoOptions.getTipo().equalsIgnoreCase("horizontal")) {
+                grafico = new GraficoBarraHorizontal(dataset);
+            } else if (graficoOptions.getTipo().equalsIgnoreCase("vertical")) {
+                grafico = new GraficoBarraVertical(dataset);
+            } else {
+                grafico = new TituloEixoX(grafico, "");
+                grafico = new TituloEixoY(grafico, "");
+            }
         }
-
-        GraficoPresenter graficoPresenter = new GraficoPresenter(new Frame(), true, grafico);
-        graficoPresenter.viewGraficoModalVisible();
+        return grafico;
     }
 }

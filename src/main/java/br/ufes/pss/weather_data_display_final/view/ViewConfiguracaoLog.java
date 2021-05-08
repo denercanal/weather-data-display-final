@@ -19,7 +19,7 @@ public class ViewConfiguracaoLog extends javax.swing.JInternalFrame {
      */
     public ViewConfiguracaoLog() {
         initComponents();
-        setLocation(510, 0);
+        setLocation(500, 0);
     }
 
     /**
