@@ -2,20 +2,64 @@
 <root>
   <quantidadeTempo number="true">1</quantidadeTempo>
   <id number="true">0</id>
-  <temperaturaTempo number="true">5.0</temperaturaTempo>
-  <umidadeTempo number="true">5.0</umidadeTempo>
-  <pressaoTempo number="true">5.0</pressaoTempo>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
   <tipoLog>calcular</tipoLog>
 </root><?xml version="1.0" encoding="UTF-8"?>
 <root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
   <id number="true">0</id>
-  <dataTempo>
-    <year number="true">2021</year>
-    <month number="true">5</month>
-    <day number="true">8</day>
-  </dataTempo>
-  <temperaturaTempo number="true">5.0</temperaturaTempo>
-  <umidadeTempo number="true">5.0</umidadeTempo>
-  <pressaoTempo number="true">5.0</pressaoTempo>
-  <tipoLog>inserir</tipoLog>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">7</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">17.271428571428572</temperaturaTempo>
+  <umidadeTempo number="true">31.599999999999998</umidadeTempo>
+  <pressaoTempo number="true">78.81428571428572</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
 </root>

@@ -39,10 +39,8 @@ public class TempoCollection extends TempoObservado {
     }
 
     public void remover(Tempo tempo) {
-
         this.tempos.remove(tempo);
         notifica();
-
     }
 
     public int getTotalRegistros() {

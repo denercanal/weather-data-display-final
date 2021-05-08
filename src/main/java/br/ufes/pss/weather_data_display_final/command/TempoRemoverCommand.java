@@ -8,13 +8,10 @@ public class TempoRemoverCommand extends TempoCommand {
 
     @Override
     public void executarRemover(Tempo tempo) throws Exception {
-        try {
-            tempo.setTipoLog("remover");
-            Logger.salvarLog(tempo);
-            TempoCollection.getTempoCollection().remover(tempo);
-        } catch (Exception e) {
-            throw new Exception("Tabela vazia!");
-        }
+
+        tempo.setTipoLog("remover");
+        Logger.salvarLog(tempo);
+        TempoCollection.getTempoCollection().remover(tempo);
     }
 
 }
