@@ -1,6 +1,7 @@
 package br.ufes.pss.weather_data_display_final.command;
 
 import br.ufes.pss.weather_data_display_final.collection.TempoCollection;
+import br.ufes.pss.weather_data_display_final.log.Logger;
 import br.ufes.pss.weather_data_display_final.model.Tempo;
 import br.ufes.pss.weather_data_display_final.view.ViewDadosTempo;
 import java.time.LocalDate;
@@ -17,6 +18,8 @@ public class TempoInserirCommand extends TempoCommand {
             this.getDadosTempo(viewDadosTempo, tempo);
 
             TempoCollection.getTempoCollection().inserir(tempo);
+            tempo.setTipoLog("inserir");
+            Logger.salvarLog(tempo);
         } catch (Exception e) {
             throw e;
         }

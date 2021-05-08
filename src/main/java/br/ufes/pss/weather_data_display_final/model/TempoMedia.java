@@ -9,8 +9,8 @@ public class TempoMedia extends Tempo {
     public TempoMedia() {
     }
 
-    public TempoMedia(int quantidadeTempo, int id, LocalDate dataTempo, Double temperaturaTempo, Double umidadeTempo, Double pressaoTempo) {
-        super(id, dataTempo, temperaturaTempo, umidadeTempo, pressaoTempo);
+    public TempoMedia(int quantidadeTempo, int id, LocalDate dataTempo, Double temperaturaTempo, Double umidadeTempo, Double pressaoTempo, String tipoLog) {
+        super(id, dataTempo, temperaturaTempo, umidadeTempo, pressaoTempo, tipoLog);
         this.quantidadeTempo = quantidadeTempo;
     }
     

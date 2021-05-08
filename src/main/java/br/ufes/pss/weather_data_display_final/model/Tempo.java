@@ -9,16 +9,18 @@ public class Tempo {
     private Double temperaturaTempo;
     private Double umidadeTempo;
     private Double pressaoTempo;
+    private String tipoLog;
 
     public Tempo() {
     }
 
-    public Tempo(int id, LocalDate dataTempo, Double temperaturaTempo, Double umidadeTempo, Double pressaoTempo) {
+    public Tempo(int id, LocalDate dataTempo, Double temperaturaTempo, Double umidadeTempo, Double pressaoTempo, String tipoLog) {
         this.id = id;
         this.dataTempo = dataTempo;
         this.temperaturaTempo = temperaturaTempo;
         this.umidadeTempo = umidadeTempo;
         this.pressaoTempo = pressaoTempo;
+        this.tipoLog = tipoLog;
     }
 
     public int getId() {
@@ -61,6 +63,12 @@ public class Tempo {
         this.pressaoTempo = pressaoTempo;
     }
 
-    
+    public String getTipoLog() {
+        return tipoLog;
+    }
 
+    public void setTipoLog(String tipoLog) {
+        this.tipoLog = tipoLog;
+    }
+    
 }

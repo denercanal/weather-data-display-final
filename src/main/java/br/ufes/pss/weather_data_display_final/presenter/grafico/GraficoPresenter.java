@@ -10,7 +10,7 @@ public class GraficoPresenter {
 
     private ViewGraficoModal viewGraficoModal;
     private Grafico grafico;
-    
+
     public GraficoPresenter(Frame parent, boolean modal, Grafico grafico) {
         this.viewGraficoModal = new ViewGraficoModal(parent, true);
         this.grafico = grafico;

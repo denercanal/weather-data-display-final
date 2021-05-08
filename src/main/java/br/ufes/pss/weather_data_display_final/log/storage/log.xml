@@ -1,0 +1,29 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">10.0</temperaturaTempo>
+  <umidadeTempo number="true">10.0</umidadeTempo>
+  <pressaoTempo number="true">10.0</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">0</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">8</day>
+  </dataTempo>
+  <temperaturaTempo number="true">10.0</temperaturaTempo>
+  <umidadeTempo number="true">10.0</umidadeTempo>
+  <pressaoTempo number="true">10.0</pressaoTempo>
+  <tipoLog>inserir</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">10.0</temperaturaTempo>
+  <umidadeTempo number="true">10.0</umidadeTempo>
+  <pressaoTempo number="true">10.0</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root>
