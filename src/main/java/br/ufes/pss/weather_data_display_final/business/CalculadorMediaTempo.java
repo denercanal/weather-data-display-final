@@ -1,21 +1,22 @@
 package br.ufes.pss.weather_data_display_final.business;
 
 import br.ufes.pss.weather_data_display_final.collection.TempoCollection;
+import br.ufes.pss.weather_data_display_final.log.Logger;
 import br.ufes.pss.weather_data_display_final.model.Tempo;
 import br.ufes.pss.weather_data_display_final.model.TempoMedia;
 import java.util.ArrayList;
 
 public abstract class CalculadorMediaTempo implements ICalculadorMediaTempo {
     
-    protected abstract ArrayList<Tempo> filtrarPorPeriodo(TempoCollection registros);
+    protected abstract ArrayList<Tempo> filtrarPorPeriodo(TempoCollection tempoCollection);
     
     @Override
     public TempoMedia calcular(TempoCollection tempoCollection) {
-        ArrayList<Tempo> registrosDoDia = filtrarPorPeriodo(tempoCollection);
+        ArrayList<Tempo> registros = filtrarPorPeriodo(tempoCollection);
         
-        int qtdRegistros = registrosDoDia.size();
+        int quantidadeRegistros = registros.size();
         
-        if(qtdRegistros == 0){
+        if(quantidadeRegistros == 0){
             throw new RuntimeException("Não há nenhum registro a ser calculado");
         }
         
@@ -23,18 +24,20 @@ public abstract class CalculadorMediaTempo implements ICalculadorMediaTempo {
         Double humidade = 0D;
         Double pressao = 0D;
         
-        for(Tempo t: registrosDoDia){
-            temperatura += t.getTemperaturaTempo();
-            humidade += t.getUmidadeTempo();
-            pressao += t.getPressaoTempo();
+        for(Tempo tempo: registros){
+            temperatura += tempo.getTemperaturaTempo();
+            humidade += tempo.getUmidadeTempo();
+            pressao += tempo.getPressaoTempo();
         }
         
         var tempo = new TempoMedia();
-        tempo.setTemperaturaTempo(temperatura/qtdRegistros);
-        tempo.setUmidadeTempo(humidade/qtdRegistros);
-        tempo.setPressaoTempo(pressao/qtdRegistros);
-        tempo.setQuantidadeTempo(qtdRegistros);
-        
+        tempo.setTemperaturaTempo(temperatura/quantidadeRegistros);
+        tempo.setUmidadeTempo(humidade/quantidadeRegistros);
+        tempo.setPressaoTempo(pressao/quantidadeRegistros);
+        tempo.setQuantidadeTempo(quantidadeRegistros);
+
+        tempo.setTipoLog("calcular");
+        Logger.salvarLog(tempo);
         return tempo;
         
     }

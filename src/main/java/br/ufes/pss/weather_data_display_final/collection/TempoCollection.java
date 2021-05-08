@@ -33,6 +33,7 @@ public class TempoCollection extends TempoObservado {
     public void inserir(Tempo tempo) {
 
         tempo.setId(tempos.size());
+
         this.tempos.add(tempo);
         notifica();
     }
@@ -45,11 +46,7 @@ public class TempoCollection extends TempoObservado {
     }
 
     public int getTotalRegistros() {
-
-        if (this.tempos.size() > 0) {
-            return this.tempos.size();
-        }
-        return 0;
+        return this.tempos.size();
     }
 
     public Tempo getUltimoRegistro() {

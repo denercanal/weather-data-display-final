@@ -19,6 +19,7 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
      */
     public ViewTelaPrincipal() {
         initComponents();
+        setLocationRelativeTo(getParent());
     }
 
     /**
@@ -35,8 +36,10 @@ public class ViewTelaPrincipal extends javax.swing.JFrame {
         totalRegistros = new javax.swing.JLabel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setTitle("Weather Data Display");
         setName("frame"); // NOI18N
         setPreferredSize(new java.awt.Dimension(800, 570));
+        setResizable(false);
         setSize(new java.awt.Dimension(800, 570));
 
         jLabel19.setText("Nº de Registros:");

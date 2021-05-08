@@ -10,7 +10,6 @@ import br.ufes.pss.weather_data_display_final.observer.ITempoObservador;
 import br.ufes.pss.weather_data_display_final.view.ViewDadosMedios;
 import br.ufes.pss.weather_data_display_final.view.ViewTelaPrincipal;
 import java.awt.event.ActionEvent;
-import java.awt.event.ActionListener;
 
 public class PresenterDadosMedios implements ITempoObservador {
 
@@ -20,15 +19,17 @@ public class PresenterDadosMedios implements ITempoObservador {
 
     public PresenterDadosMedios(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
-        this.viewDadosMedios = new ViewDadosMedios();
+        this.viewDadosMedios = getViewDadosMedios();
         this.calculador = new CalculadorMediaDia();
         this.viewTelaPrincipal.getDesktop().add(this.viewDadosMedios);
         this.viewDadosMediosCalcular();
+    }
 
+    public void viewDadosMediosVisible() {
+        this.viewDadosMedios.setVisible(true);
     }
 
     public static ViewDadosMedios getViewDadosMedios() {
-
         if (viewDadosMedios == null) {
             return viewDadosMedios = new ViewDadosMedios();
         } else {
@@ -36,38 +37,30 @@ public class PresenterDadosMedios implements ITempoObservador {
         }
     }
 
-    private PresenterDadosMedios() {
-
-        this.viewDadosMedios = new ViewDadosMedios();
-    }
-
     private void viewDadosMediosCalcular() {
-        this.viewDadosMedios.getCbbPeriodo().addActionListener(new ActionListener() {
-            @Override
-            public void actionPerformed(ActionEvent arg0) {
-                String opcao = viewDadosMedios.getCbbPeriodo().getSelectedItem().toString();
-
-                if (opcao.equalsIgnoreCase("diária")) {
-                    calculador = new CalculadorMediaDia();
-                    calcularMedia();
-                }
-                if (opcao.equalsIgnoreCase("semanal")) {
-                    calculador = new CalculadorMediaSemana();
-                    calcularMedia();
-                }
-                if (opcao.equalsIgnoreCase("mensal")) {
-                    calculador = new CalculadorMediaMes();
-                    calcularMedia();
-                }
-            }
+        this.viewDadosMedios.getCbbPeriodo().addActionListener((ActionEvent arg0) -> {
+            viewDadosMediosOptions();
         });
     }
 
-    public void viewDadosMediosVisible() {
-        this.viewDadosMedios.setVisible(true);
+    private void viewDadosMediosOptions() {
+        String opcao = viewDadosMedios.getCbbPeriodo().getSelectedItem().toString();
+
+        if (opcao.equalsIgnoreCase("diária")) {
+            calculador = new CalculadorMediaDia();
+            calcularMedia();
+        }
+        if (opcao.equalsIgnoreCase("semanal")) {
+            calculador = new CalculadorMediaSemana();
+            calcularMedia();
+        }
+        if (opcao.equalsIgnoreCase("mensal")) {
+            calculador = new CalculadorMediaMes();
+            calcularMedia();
+        }
     }
 
-    public void atualizarCampos(TempoMedia tempoMedia) {
+    private void atualizarCampos(TempoMedia tempoMedia) {
 
         viewDadosMedios.getTemperaturaMedia().setText(String.format("%.2f", tempoMedia.getTemperaturaTempo()));
         viewDadosMedios.getUmidadeMedia().setText(String.format("%.2f", tempoMedia.getUmidadeTempo()));
@@ -75,7 +68,7 @@ public class PresenterDadosMedios implements ITempoObservador {
         viewDadosMedios.getTotalRegistrosMedia().setText(String.valueOf(tempoMedia.getQuantidadeTempo()));
     }
 
-    public void limparCampos() {
+    private void limparCampos() {
 
         viewDadosMedios.getTemperaturaMedia().setText("");
         viewDadosMedios.getUmidadeMedia().setText("");
