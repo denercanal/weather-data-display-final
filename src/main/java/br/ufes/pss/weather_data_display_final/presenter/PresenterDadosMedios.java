@@ -70,10 +70,10 @@ public class PresenterDadosMedios implements ITempoObservador {
 
     private void limparCampos() {
 
-        viewDadosMedios.getTemperaturaMedia().setText("");
-        viewDadosMedios.getUmidadeMedia().setText("");
-        viewDadosMedios.getPressaoMedia().setText("");
-        viewDadosMedios.getTotalRegistrosMedia().setText("0");
+        viewDadosMedios.getTemperaturaMedia().setText("Not Found.");
+        viewDadosMedios.getUmidadeMedia().setText("Not Found.");
+        viewDadosMedios.getPressaoMedia().setText("Not Found.");
+        viewDadosMedios.getTotalRegistrosMedia().setText("Not Found.");
     }
 
     private void calcularMedia() {

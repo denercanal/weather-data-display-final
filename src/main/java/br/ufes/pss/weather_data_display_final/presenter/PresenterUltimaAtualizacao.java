@@ -27,10 +27,10 @@ public class PresenterUltimaAtualizacao implements ITempoObservador {
     public void update(TempoCollection tempoCollection) {
 
         if (tempoCollection.getAllTempos().size() == 0) {
-            this.viewUltimaAtualizacao.getUltimaDataTempo().setText(String.valueOf(""));
-            this.viewUltimaAtualizacao.getUltimaTemperaturaTempo().setText(String.valueOf(""));
-            this.viewUltimaAtualizacao.getUltimaUmidadeTempo().setText(String.valueOf(""));
-            this.viewUltimaAtualizacao.getUltimaPressaoTempo().setText(String.valueOf(""));
+            this.viewUltimaAtualizacao.getUltimaDataTempo().setText(String.valueOf("Not Found."));
+            this.viewUltimaAtualizacao.getUltimaTemperaturaTempo().setText(String.valueOf("Not Found."));
+            this.viewUltimaAtualizacao.getUltimaUmidadeTempo().setText(String.valueOf("Not Found."));
+            this.viewUltimaAtualizacao.getUltimaPressaoTempo().setText(String.valueOf("Not Found."));
         } else {
             var ultimoRegistro = tempoCollection.getUltimoRegistro();
             this.viewUltimaAtualizacao.getUltimaDataTempo().setText(String.valueOf(ultimoRegistro.getDataTempo().format(DateTimeFormatter.ofPattern("dd/MM/yyyy"))));

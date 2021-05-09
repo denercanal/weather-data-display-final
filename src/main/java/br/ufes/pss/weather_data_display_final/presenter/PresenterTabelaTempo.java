@@ -42,6 +42,7 @@ public class PresenterTabelaTempo implements ITempoObservador {
                     var idDadoTempo = viewTabelaTempo.getTabela().getValueAt(linhaSelecionada, 0);
                     var tempo = TempoCollection.getTempoCollection().getTempoById((int) idDadoTempo);
                     this.businessTempo.remover(tempo);
+                    JOptionPane.showMessageDialog(viewTelaPrincipal, "Registro com id: " + tempo.getId() + " removido com sucesso!");
                 }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Alerta!", JOptionPane.INFORMATION_MESSAGE);
