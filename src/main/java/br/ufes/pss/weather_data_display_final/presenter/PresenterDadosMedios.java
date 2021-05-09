@@ -18,11 +18,14 @@ public class PresenterDadosMedios implements ITempoObservador {
     private ViewDadosMedios viewDadosMedios;
     private CalculadorMediaTempo calculador;
     private TempoCollection tempoCollection;
+    private CalculadorMediaDia dia;
+    private CalculadorMediaMes mes;
+    private CalculadorMediaSemana semana;
     
     public PresenterDadosMedios(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
         this.viewDadosMedios = new ViewDadosMedios();
-        this.calculador = new CalculadorMediaDia();
+        this.dia = new CalculadorMediaDia();
         this.viewTelaPrincipal.getDesktop().add(this.viewDadosMedios);
         atualizaDados();
         
@@ -30,7 +33,6 @@ public class PresenterDadosMedios implements ITempoObservador {
             @Override
             public void actionPerformed(ActionEvent arg0) {
                 atualizaDados();
-
             }
             
         });
@@ -45,13 +47,13 @@ public class PresenterDadosMedios implements ITempoObservador {
         String opcao = this.viewDadosMedios.getCbbPeriodo().getSelectedItem().toString();
         
         if (opcao.equalsIgnoreCase("diario")){
-            calculador = new CalculadorMediaDia();
+            dia = new CalculadorMediaDia();
         }
         if (opcao.equalsIgnoreCase("semanal")){
-            calculador = new CalculadorMediaSemana();
+            semana = new CalculadorMediaSemana();
         }
         if (opcao.equalsIgnoreCase("mensal")){
-            calculador = new CalculadorMediaMes();
+            mes = new CalculadorMediaMes();
         }
         
     }
