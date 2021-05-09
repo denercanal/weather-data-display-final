@@ -12,6 +12,7 @@ public class TempoRemoverCommand extends TempoCommand {
         tempo.setTipoLog("remover");
         Logger.salvarLog(tempo);
         TempoCollection.getTempoCollection().remover(tempo);
+
     }
 
 }

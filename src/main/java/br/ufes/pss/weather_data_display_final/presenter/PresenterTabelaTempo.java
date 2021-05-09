@@ -59,7 +59,7 @@ public class PresenterTabelaTempo implements ITempoObservador {
 
         DefaultTableModel model = (DefaultTableModel) viewTabelaTempo.getTabela().getModel();
 
-        if (!tempos.isEmpty()) {
+        if (!(tempos.size() == 0)) {
             for (Tempo tempo : tempos) {
                 var linha = new Object[]{tempo.getId(), tempo.getDataTempo().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), tempo.getTemperaturaTempo().toString().replace(".", ","), tempo.getUmidadeTempo().toString().replace(".", ","), tempo.getPressaoTempo().toString().replace(".", ",")};
                 model.addRow(linha);

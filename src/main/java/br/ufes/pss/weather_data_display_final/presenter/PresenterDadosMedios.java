@@ -1,9 +1,9 @@
 package br.ufes.pss.weather_data_display_final.presenter;
 
-import br.ufes.pss.weather_data_display_final.business.CalculadorMediaDia;
-import br.ufes.pss.weather_data_display_final.business.CalculadorMediaMes;
-import br.ufes.pss.weather_data_display_final.business.CalculadorMediaSemana;
-import br.ufes.pss.weather_data_display_final.business.CalculadorMediaTempo;
+import br.ufes.pss.weather_data_display_final.calculator.CalculadorMediaDia;
+import br.ufes.pss.weather_data_display_final.calculator.CalculadorMediaMes;
+import br.ufes.pss.weather_data_display_final.calculator.CalculadorMediaSemana;
+import br.ufes.pss.weather_data_display_final.calculator.CalculadorMediaTempo;
 import br.ufes.pss.weather_data_display_final.collection.TempoCollection;
 import br.ufes.pss.weather_data_display_final.model.TempoMedia;
 import br.ufes.pss.weather_data_display_final.observer.ITempoObservador;

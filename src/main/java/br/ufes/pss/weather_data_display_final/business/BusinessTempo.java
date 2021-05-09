@@ -24,7 +24,6 @@ public class BusinessTempo {
         try {
 
             validacaoRemover(tempo);
-
             new TempoRemoverCommand().executarRemover(tempo);
 
         } catch (Exception ex) {
@@ -44,6 +43,22 @@ public class BusinessTempo {
         this.validaViewDadosMedios(viewDadosMedios);
 
         graficoOptions.setTipo("vertical");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    public void graficoAreaEmpilhada(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("area empilhada");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    public void graficoPizza(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("pizza");
         new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
     }
 
