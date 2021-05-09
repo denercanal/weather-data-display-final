@@ -42,19 +42,24 @@ public class PresenterConfiguracaoGrafico {
                 if (viewConfiguracaoGrafico.getTitulo().isSelected()) {
                     if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA HORIZONTAL")) {
                         this.businessTempo.graficoHorizontal(viewDadosMedios, grafico, options);
-
                     } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA VERTICAL")) {
                         this.businessTempo.graficoVertical(viewDadosMedios, grafico, options);
+                    } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("AREA EMPILHADA")) {
+                        this.businessTempo.graficoAreaEmpilhada(viewDadosMedios, grafico, options);
+                    } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("PIZZA")) {
+                        throw new Exception("Impossível gerar gráfico de pizza com títulos");
                     }
                 } else {
                     if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA HORIZONTAL")) {
                         this.businessTempo.graficoHorizontal(viewDadosMedios, grafico, options);
-
                     } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("BARRA VERTICAL")) {
                         this.businessTempo.graficoVertical(viewDadosMedios, grafico, options);
+                    } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("AREA EMPILHADA")) {
+                        this.businessTempo.graficoAreaEmpilhada(viewDadosMedios, grafico, options);
+                    } else if (this.viewConfiguracaoGrafico.getjComboBox3().getSelectedItem().toString().equalsIgnoreCase("PIZZA")) {
+                        this.businessTempo.graficoPizza(viewDadosMedios, grafico, options);
                     }
                 }
-
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.INFORMATION_MESSAGE);
             }

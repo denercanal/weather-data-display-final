@@ -24,13 +24,7 @@ public class PresenterTelaPrincipal implements ITempoObservador {
     public void update(TempoCollection tempoCollection) {
 
         var totalRegistros = TempoCollection.getTempoCollection().getTotalRegistros();
-        var label = this.viewTelaPrincipal.getTotalRegistros().getText();
-
-        if (totalRegistros == 0 && label.equalsIgnoreCase("1")) {
-            this.viewTelaPrincipal.getTotalRegistros().setText("0");
-        } else {
-            this.viewTelaPrincipal.getTotalRegistros().setText(String.valueOf(totalRegistros));
-        }
+        this.viewTelaPrincipal.getTotalRegistros().setText(String.valueOf(totalRegistros));
     }
 
     private void viewTelaPrincipalVisible() {

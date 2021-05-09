@@ -24,7 +24,6 @@ public class BusinessTempo {
         try {
 
             validacaoRemover(tempo);
-
             new TempoRemoverCommand().executarRemover(tempo);
 
         } catch (Exception ex) {
@@ -47,10 +46,26 @@ public class BusinessTempo {
         new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
     }
 
+    public void graficoAreaEmpilhada(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("area empilhada");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    public void graficoPizza(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("pizza");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
     private void validaViewDadosMedios(ViewDadosMedios viewDadosMedios) throws Exception {
 
         try {
-            if (viewDadosMedios.getTemperaturaMedia().getText().isBlank() || viewDadosMedios.getUmidadeMedia().getText().isBlank() || viewDadosMedios.getPressaoMedia().getText().isBlank()) {
+            if (viewDadosMedios.getTemperaturaMedia().getText().equalsIgnoreCase("Not Found.") || viewDadosMedios.getUmidadeMedia().getText().equalsIgnoreCase("Not Found.") || viewDadosMedios.getPressaoMedia().getText().equalsIgnoreCase("Not Found.")) {
                 throw new Exception("Impossível gerar gráfico, sem dados inseridos para o período!");
             }
         } catch (Exception e) {

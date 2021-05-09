@@ -15,7 +15,6 @@ public class TituloEixoX extends GraficoDecorator {
     public JFreeChart plotar() {
         JFreeChart grafico = this.elementoDecorado.plotar();
         grafico.getCategoryPlot().getDomainAxis().setLabel(descricao);
-
         return grafico;
     }
 

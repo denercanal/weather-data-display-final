@@ -28,11 +28,12 @@ public class TempoCollection extends TempoObservado {
     private TempoCollection() {
 
         this.tempos = new ArrayList<>();
+        notifica();
     }
 
     public void inserir(Tempo tempo) {
 
-        tempo.setId(tempos.size());
+        tempo.setId(tempos.size() + 1);
 
         this.tempos.add(tempo);
         notifica();

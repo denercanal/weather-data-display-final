@@ -1,4 +1,4 @@
-package br.ufes.pss.weather_data_display_final.business;
+package br.ufes.pss.weather_data_display_final.calculator;
 
 import br.ufes.pss.weather_data_display_final.collection.TempoCollection;
 import br.ufes.pss.weather_data_display_final.log.Logger;
@@ -12,9 +12,9 @@ public abstract class CalculadorMediaTempo implements ICalculadorMediaTempo {
     
     @Override
     public TempoMedia calcular(TempoCollection tempoCollection) {
-        ArrayList<Tempo> registros = filtrarPorPeriodo(tempoCollection);
+        ArrayList<Tempo> registrosTempo = filtrarPorPeriodo(tempoCollection);
         
-        int quantidadeRegistros = registros.size();
+        int quantidadeRegistros = registrosTempo.size();
         
         if(quantidadeRegistros == 0){
             throw new RuntimeException("Não há nenhum registro a ser calculado");
@@ -24,7 +24,7 @@ public abstract class CalculadorMediaTempo implements ICalculadorMediaTempo {
         Double humidade = 0D;
         Double pressao = 0D;
         
-        for(Tempo tempo: registros){
+        for(Tempo tempo: registrosTempo){
             temperatura += tempo.getTemperaturaTempo();
             humidade += tempo.getUmidadeTempo();
             pressao += tempo.getPressaoTempo();

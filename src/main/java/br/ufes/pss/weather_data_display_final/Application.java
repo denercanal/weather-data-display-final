@@ -33,17 +33,17 @@ public class Application {
         Tempo tempo6 = new Tempo(6, LocalDate.now().plusDays(6), 5D, 6D, 6D, "");
 
         TempoCollection.getTempoCollection().inserir(tempo0);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(400);
         TempoCollection.getTempoCollection().inserir(tempo1);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(400);
         TempoCollection.getTempoCollection().inserir(tempo2);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(400);
         TempoCollection.getTempoCollection().inserir(tempo3);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(400);
         TempoCollection.getTempoCollection().inserir(tempo4);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(400);
         TempoCollection.getTempoCollection().inserir(tempo5);
-        TimeUnit.SECONDS.sleep(1);
+        TimeUnit.MILLISECONDS.sleep(400);
         TempoCollection.getTempoCollection().inserir(tempo6);
     }
 }
