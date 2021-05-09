@@ -1,8 +1,12 @@
 package br.ufes.pss.weather_data_display_final.business;
 
+import br.ufes.pss.weather_data_display_final.command.TempoGerarGraficoCommand;
 import br.ufes.pss.weather_data_display_final.command.TempoInserirCommand;
 import br.ufes.pss.weather_data_display_final.command.TempoRemoverCommand;
+import br.ufes.pss.weather_data_display_final.decorator.Grafico;
+import br.ufes.pss.weather_data_display_final.model.GraficoOptions;
 import br.ufes.pss.weather_data_display_final.model.Tempo;
+import br.ufes.pss.weather_data_display_final.view.ViewDadosMedios;
 import br.ufes.pss.weather_data_display_final.view.ViewDadosTempo;
 
 public class BusinessTempo {
@@ -20,11 +24,52 @@ public class BusinessTempo {
         try {
 
             validacaoRemover(tempo);
-
             new TempoRemoverCommand().executarRemover(tempo);
 
         } catch (Exception ex) {
             throw ex;
+        }
+    }
+
+    public void graficoHorizontal(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+        graficoOptions.setTipo("horizontal");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    public void graficoVertical(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("vertical");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    public void graficoAreaEmpilhada(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("area empilhada");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    public void graficoPizza(ViewDadosMedios viewDadosMedios, Grafico grafico, GraficoOptions graficoOptions) throws Exception {
+
+        this.validaViewDadosMedios(viewDadosMedios);
+
+        graficoOptions.setTipo("pizza");
+        new TempoGerarGraficoCommand().executarGerarGrafico(viewDadosMedios, grafico, graficoOptions);
+    }
+
+    private void validaViewDadosMedios(ViewDadosMedios viewDadosMedios) throws Exception {
+
+        try {
+            if (viewDadosMedios.getTemperaturaMedia().getText().equalsIgnoreCase("Not Found.") || viewDadosMedios.getUmidadeMedia().getText().equalsIgnoreCase("Not Found.") || viewDadosMedios.getPressaoMedia().getText().equalsIgnoreCase("Not Found.")) {
+                throw new Exception("Impossível gerar gráfico, sem dados inseridos para o período!");
+            }
+        } catch (Exception e) {
+            throw e;
         }
     }
 

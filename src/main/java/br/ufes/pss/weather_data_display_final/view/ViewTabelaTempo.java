@@ -19,7 +19,7 @@ public class ViewTabelaTempo extends javax.swing.JInternalFrame {
      */
     public ViewTabelaTempo() {
         initComponents();
-        setLocation(235,280);
+        setLocation(235,320);
     }
 
     /**

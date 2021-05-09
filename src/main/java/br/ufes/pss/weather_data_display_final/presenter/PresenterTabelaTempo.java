@@ -42,6 +42,7 @@ public class PresenterTabelaTempo implements ITempoObservador {
                     var idDadoTempo = viewTabelaTempo.getTabela().getValueAt(linhaSelecionada, 0);
                     var tempo = TempoCollection.getTempoCollection().getTempoById((int) idDadoTempo);
                     this.businessTempo.remover(tempo);
+                    JOptionPane.showMessageDialog(viewTelaPrincipal, "Registro com id: " + tempo.getId() + " removido com sucesso!");
                 }
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Alerta!", JOptionPane.INFORMATION_MESSAGE);
@@ -59,7 +60,7 @@ public class PresenterTabelaTempo implements ITempoObservador {
 
         DefaultTableModel model = (DefaultTableModel) viewTabelaTempo.getTabela().getModel();
 
-        if (!tempos.isEmpty()) {
+        if (!(tempos.size() == 0)) {
             for (Tempo tempo : tempos) {
                 var linha = new Object[]{tempo.getId(), tempo.getDataTempo().format(DateTimeFormatter.ofPattern("dd/MM/yyyy")), tempo.getTemperaturaTempo().toString().replace(".", ","), tempo.getUmidadeTempo().toString().replace(".", ","), tempo.getPressaoTempo().toString().replace(".", ",")};
                 model.addRow(linha);

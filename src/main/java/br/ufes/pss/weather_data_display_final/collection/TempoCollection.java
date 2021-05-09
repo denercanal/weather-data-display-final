@@ -28,28 +28,24 @@ public class TempoCollection extends TempoObservado {
     private TempoCollection() {
 
         this.tempos = new ArrayList<>();
+        notifica();
     }
 
     public void inserir(Tempo tempo) {
 
-        tempo.setId(tempos.size());
+        tempo.setId(tempos.size() + 1);
+
         this.tempos.add(tempo);
         notifica();
     }
 
     public void remover(Tempo tempo) {
-
         this.tempos.remove(tempo);
         notifica();
-
     }
 
     public int getTotalRegistros() {
-
-        if (this.tempos.size() > 0) {
-            return this.tempos.size();
-        }
-        return 0;
+        return this.tempos.size();
     }
 
     public Tempo getUltimoRegistro() {

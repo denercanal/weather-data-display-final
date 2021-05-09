@@ -1,0 +1,189 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">7</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">15</day>
+  </dataTempo>
+  <temperaturaTempo number="true">5.0</temperaturaTempo>
+  <umidadeTempo number="true">6.0</umidadeTempo>
+  <pressaoTempo number="true">6.0</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">6</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">14</day>
+  </dataTempo>
+  <temperaturaTempo number="true">5.0</temperaturaTempo>
+  <umidadeTempo number="true">5.0</umidadeTempo>
+  <pressaoTempo number="true">5.0</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">5</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">13</day>
+  </dataTempo>
+  <temperaturaTempo number="true">4.0</temperaturaTempo>
+  <umidadeTempo number="true">4.0</umidadeTempo>
+  <pressaoTempo number="true">4.0</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">4</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">12</day>
+  </dataTempo>
+  <temperaturaTempo number="true">3.0</temperaturaTempo>
+  <umidadeTempo number="true">3.0</umidadeTempo>
+  <pressaoTempo number="true">3.0</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">2</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">10</day>
+  </dataTempo>
+  <temperaturaTempo number="true">1.0</temperaturaTempo>
+  <umidadeTempo number="true">1.0</umidadeTempo>
+  <pressaoTempo number="true">1.0</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">3</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">11</day>
+  </dataTempo>
+  <temperaturaTempo number="true">2.0</temperaturaTempo>
+  <umidadeTempo number="true">2.0</umidadeTempo>
+  <pressaoTempo number="true">2.0</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <quantidadeTempo number="true">1</quantidadeTempo>
+  <id number="true">0</id>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>calcular</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <id number="true">1</id>
+  <dataTempo>
+    <year number="true">2021</year>
+    <month number="true">5</month>
+    <day number="true">9</day>
+  </dataTempo>
+  <temperaturaTempo number="true">100.9</temperaturaTempo>
+  <umidadeTempo number="true">200.2</umidadeTempo>
+  <pressaoTempo number="true">530.7</pressaoTempo>
+  <tipoLog>remover</tipoLog>
+</root>

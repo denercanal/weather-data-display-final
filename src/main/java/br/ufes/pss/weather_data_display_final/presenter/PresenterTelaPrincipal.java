@@ -10,7 +10,6 @@ public class PresenterTelaPrincipal implements ITempoObservador {
 
     public PresenterTelaPrincipal() {
         this.viewTelaPrincipal = new ViewTelaPrincipal();
-
         this.viewConfiguracaoGrafico();
         this.viewConfiguracaoLog();
         this.viewDadosMedios();
@@ -23,10 +22,8 @@ public class PresenterTelaPrincipal implements ITempoObservador {
 
     @Override
     public void update(TempoCollection tempoCollection) {
-        var totalRegistros = tempoCollection.getTotalRegistros();
-        if (totalRegistros == 0) {
-            this.viewTelaPrincipal.getTotalRegistros().setText("0");
-        }
+
+        var totalRegistros = TempoCollection.getTempoCollection().getTotalRegistros();
         this.viewTelaPrincipal.getTotalRegistros().setText(String.valueOf(totalRegistros));
     }
 
