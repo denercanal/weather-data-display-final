@@ -5,7 +5,6 @@
  */
 package br.ufes.pss.weather_data_display_final.view;
 
-import javax.swing.JButton;
 import javax.swing.JComboBox;
 
 /**
@@ -33,8 +32,7 @@ public class ViewConfiguracaoLog extends javax.swing.JInternalFrame {
 
         jPanel8 = new javax.swing.JPanel();
         jLabel14 = new javax.swing.JLabel();
-        jComboBox2 = new javax.swing.JComboBox<>();
-        btnGerarLog = new javax.swing.JButton();
+        logOptions = new javax.swing.JComboBox<>();
         jSeparator4 = new javax.swing.JSeparator();
         jLabel18 = new javax.swing.JLabel();
 
@@ -43,17 +41,7 @@ public class ViewConfiguracaoLog extends javax.swing.JInternalFrame {
 
         jLabel14.setText("Log:");
 
-        jComboBox2.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "JSON", "XML", " " }));
-
-        btnGerarLog.setBackground(new java.awt.Color(51, 51, 51));
-        btnGerarLog.setFont(new java.awt.Font("Cantarell", 0, 15)); // NOI18N
-        btnGerarLog.setForeground(new java.awt.Color(255, 255, 255));
-        btnGerarLog.setText("Gerar Log");
-        btnGerarLog.addActionListener(new java.awt.event.ActionListener() {
-            public void actionPerformed(java.awt.event.ActionEvent evt) {
-                btnGerarLogActionPerformed(evt);
-            }
-        });
+        logOptions.setModel(new javax.swing.DefaultComboBoxModel<>(new String[] { "XML", "JSON" }));
 
         jSeparator4.setBackground(new java.awt.Color(0, 0, 0));
 
@@ -74,9 +62,7 @@ public class ViewConfiguracaoLog extends javax.swing.JInternalFrame {
                         .addGap(0, 0, Short.MAX_VALUE)
                         .addComponent(jLabel14, javax.swing.GroupLayout.PREFERRED_SIZE, 50, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                        .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                            .addComponent(btnGerarLog, javax.swing.GroupLayout.DEFAULT_SIZE, 193, Short.MAX_VALUE)
-                            .addComponent(jComboBox2, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))))
+                        .addComponent(logOptions, javax.swing.GroupLayout.PREFERRED_SIZE, 193, javax.swing.GroupLayout.PREFERRED_SIZE)))
                 .addContainerGap())
         );
         jPanel8Layout.setVerticalGroup(
@@ -89,10 +75,8 @@ public class ViewConfiguracaoLog extends javax.swing.JInternalFrame {
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addGroup(jPanel8Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                     .addComponent(jLabel14)
-                    .addComponent(jComboBox2, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
-                .addComponent(btnGerarLog)
-                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                    .addComponent(logOptions, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE))
+                .addContainerGap(37, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
@@ -109,24 +93,15 @@ public class ViewConfiguracaoLog extends javax.swing.JInternalFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
-    private void btnGerarLogActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_btnGerarLogActionPerformed
-        // TODO add your handling code here:
-    }//GEN-LAST:event_btnGerarLogActionPerformed
-
-    public JButton getBtnGerarLog() {
-        return btnGerarLog;
-    }
-
-    public JComboBox<String> getjComboBox2() {
-        return jComboBox2;
+    public JComboBox<String> getLogOptions() {
+        return logOptions;
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
-    private javax.swing.JButton btnGerarLog;
-    private javax.swing.JComboBox<String> jComboBox2;
     private javax.swing.JLabel jLabel14;
     private javax.swing.JLabel jLabel18;
     private javax.swing.JPanel jPanel8;
     private javax.swing.JSeparator jSeparator4;
+    private javax.swing.JComboBox<String> logOptions;
     // End of variables declaration//GEN-END:variables
 }

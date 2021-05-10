@@ -18,6 +18,5 @@ public class TempoGerarGraficoCommand extends TempoCommand {
             GraficoGenericoBuilder graficoGenerico = new GraficoGenericoBuilder();
             graficoGenerico.createGrafico(viewDadosMedios, grafico, graficoOptions);
         }
-
     }
 }

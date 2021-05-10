@@ -5,22 +5,24 @@ public class GraficoOptions {
     private Double temperaturaMedia;
     private Double umidadeMedia;
     private Double pressaoMedia;
-    private Boolean selected;
+    private Boolean titulo;
     private String tituloEixoX;
     private String tituloEixoY;
     private String tipo;
+    private String tipoLog;
 
     public GraficoOptions() {
     }
 
-    public GraficoOptions(Double temperaturaMedia, Double umidadeMedia, Double pressaoMedia, Boolean selected, String tituloEixoX, String tituloEixoY, String tipo) {
+    public GraficoOptions(Double temperaturaMedia, Double umidadeMedia, Double pressaoMedia, Boolean selected, String tituloEixoX, String tituloEixoY, String tipo, String tipoLog) {
         this.temperaturaMedia = temperaturaMedia;
         this.umidadeMedia = umidadeMedia;
         this.pressaoMedia = pressaoMedia;
-        this.selected = selected;
+        this.titulo = selected;
         this.tituloEixoX = tituloEixoX;
         this.tituloEixoY = tituloEixoY;
         this.tipo = tipo;
+        this.tipoLog = tipoLog;
     }
 
     public Double getTemperaturaMedia() {
@@ -48,11 +50,11 @@ public class GraficoOptions {
     }
 
     public Boolean getSelected() {
-        return selected;
+        return titulo;
     }
 
     public void setSelected(Boolean selected) {
-        this.selected = selected;
+        this.titulo = selected;
     }
 
     public String getTituloEixoX() {
@@ -77,6 +79,14 @@ public class GraficoOptions {
 
     public void setTipo(String tipo) {
         this.tipo = tipo;
+    }
+
+    public String getTipoLog() {
+        return tipoLog;
+    }
+
+    public void setTipoLog(String tipoLog) {
+        this.tipoLog = tipoLog;
     }
 
 }

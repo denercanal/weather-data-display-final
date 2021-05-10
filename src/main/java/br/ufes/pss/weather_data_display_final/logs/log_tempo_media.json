@@ -1,0 +1,37 @@
+{
+  "quantidadeTempo": 1,
+  "id": 0,
+  "dataTempo": {
+    "year": 2021,
+    "month": 5,
+    "day": 9
+  },
+  "temperaturaTempo": 300.0,
+  "umidadeTempo": 200.0,
+  "pressaoTempo": 800.0,
+  "tipoLog": "calcular"
+}{
+  "quantidadeTempo": 1,
+  "id": 0,
+  "dataTempo": {
+    "year": 2021,
+    "month": 5,
+    "day": 9
+  },
+  "temperaturaTempo": 300.0,
+  "umidadeTempo": 200.0,
+  "pressaoTempo": 800.0,
+  "tipoLog": "calcular"
+}{
+  "quantidadeTempo": 1,
+  "id": 0,
+  "dataTempo": {
+    "year": 2021,
+    "month": 5,
+    "day": 9
+  },
+  "temperaturaTempo": 300.0,
+  "umidadeTempo": 200.0,
+  "pressaoTempo": 800.0,
+  "tipoLog": "calcular"
+}

@@ -33,6 +33,7 @@ public class PresenterDadosTempo implements ITempoObservador {
         this.viewDadosTempo.getBtnInserir().addActionListener((ActionEvent e) -> {
             try {
                 this.businessTempo.inserir(viewDadosTempo);
+                JOptionPane.showMessageDialog(viewTelaPrincipal, "Registro inserido com sucesso!");
             } catch (Exception ex) {
                 JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.INFORMATION_MESSAGE);
             }
