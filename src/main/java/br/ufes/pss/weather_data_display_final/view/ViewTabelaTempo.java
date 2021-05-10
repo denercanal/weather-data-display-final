@@ -19,7 +19,7 @@ public class ViewTabelaTempo extends javax.swing.JInternalFrame {
      */
     public ViewTabelaTempo() {
         initComponents();
-        setLocation(235,320);
+        setLocation(235,315);
     }
 
     /**
@@ -92,7 +92,7 @@ public class ViewTabelaTempo extends javax.swing.JInternalFrame {
                 .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 179, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED)
                 .addComponent(btnRemover)
-                .addContainerGap(12, Short.MAX_VALUE))
+                .addContainerGap(20, Short.MAX_VALUE))
         );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());

@@ -18,7 +18,7 @@ public class ViewUltimaAtualizacao extends javax.swing.JInternalFrame {
      */
     public ViewUltimaAtualizacao() {
         initComponents();
-        setLocation(0, 320);
+        setLocation(0, 315);
     }
 
     /**
