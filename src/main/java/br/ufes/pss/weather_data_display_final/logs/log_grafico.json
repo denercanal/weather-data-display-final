@@ -1,0 +1,43 @@
+{
+  "titulo": false,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "horizontal",
+  "tipoLog": "gerarGrafico"
+}{
+  "titulo": true,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "horizontal",
+  "tipoLog": "gerarGrafico"
+}{
+  "titulo": false,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "vertical",
+  "tipoLog": "gerarGrafico"
+}{
+  "titulo": true,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "vertical",
+  "tipoLog": "gerarGrafico"
+}{
+  "titulo": false,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "area empilhada",
+  "tipoLog": "gerarGrafico"
+}{
+  "titulo": true,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "area empilhada",
+  "tipoLog": "gerarGrafico"
+}{
+  "titulo": false,
+  "tituloEixoX": "Titulo do eixo X",
+  "tituloEixoY": "Titulo do eixo Y",
+  "tipo": "pizza",
+  "tipoLog": "gerarGrafico"
+}

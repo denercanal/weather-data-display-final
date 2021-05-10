@@ -8,7 +8,7 @@ import javax.swing.JOptionPane;
 public class PresenterConfiguracaoLog {
 
     private ViewTelaPrincipal viewTelaPrincipal;
-    private ViewConfiguracaoLog viewConfiguracaoLog;
+    private static ViewConfiguracaoLog viewConfiguracaoLog;
 
     public PresenterConfiguracaoLog(ViewTelaPrincipal viewTelaPrincipal) {
         this.viewTelaPrincipal = viewTelaPrincipal;
@@ -16,19 +16,23 @@ public class PresenterConfiguracaoLog {
         this.viewConfiguracaoLog = new ViewConfiguracaoLog();
 
         this.viewTelaPrincipal.getDesktop().add(viewConfiguracaoLog);
-        this.viewConfiguracaoLogGerar();
+        this.viewConfiguracaoLogTipo();
     }
 
     public void viewConfiguracaoLogVisible() {
         this.viewConfiguracaoLog.setVisible(true);
     }
 
-    private void viewConfiguracaoLogGerar() {
-        this.viewConfiguracaoLog.getBtnGerarLog().addActionListener((ActionEvent e) -> {
-            try {
+    public static ViewConfiguracaoLog getViewConfiguracaoLog() {
+        return viewConfiguracaoLog;
+    }
 
-            } catch (Exception ex) {
-                JOptionPane.showMessageDialog(viewTelaPrincipal, ex.getMessage(), "Dados Inválidos!", JOptionPane.INFORMATION_MESSAGE);
+    private void viewConfiguracaoLogTipo() {
+        this.viewConfiguracaoLog.getLogOptions().addActionListener((ActionEvent e) -> {
+            if (this.viewConfiguracaoLog.getLogOptions().getSelectedItem().equals("JSON")) {
+                JOptionPane.showMessageDialog(viewTelaPrincipal, "Usando sistema de Log em formato Json!");
+            } else {
+                JOptionPane.showMessageDialog(viewTelaPrincipal, "Usando sistema de Log em formato Xml!");
             }
         });
     }

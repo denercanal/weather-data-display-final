@@ -68,6 +68,9 @@ public class BusinessTempo {
             if (viewDadosMedios.getTemperaturaMedia().getText().equalsIgnoreCase("Not Found.") || viewDadosMedios.getUmidadeMedia().getText().equalsIgnoreCase("Not Found.") || viewDadosMedios.getPressaoMedia().getText().equalsIgnoreCase("Not Found.")) {
                 throw new Exception("Impossível gerar gráfico, sem dados inseridos para o período!");
             }
+            if(viewDadosMedios.getTemperaturaMedia().getText().isBlank() || viewDadosMedios.getUmidadeMedia().getText().isBlank() || viewDadosMedios.getPressaoMedia().getText().isBlank()){
+                throw new Exception("Impossível gerar gráfico, sem dados inseridos!");
+            }
         } catch (Exception e) {
             throw e;
         }

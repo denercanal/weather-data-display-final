@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">false</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>horizontal</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">true</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>horizontal</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">false</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>vertical</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">true</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>vertical</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">false</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>area empilhada</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">true</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>area empilhada</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root><?xml version="1.0" encoding="UTF-8"?>
+<root>
+  <titulo boolean="true">false</titulo>
+  <tituloEixoX>Titulo do eixo X</tituloEixoX>
+  <tituloEixoY>Titulo do eixo Y</tituloEixoY>
+  <tipo>pizza</tipo>
+  <tipoLog>gerarGrafico</tipoLog>
+</root>
